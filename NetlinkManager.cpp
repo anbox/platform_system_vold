@@ -64,8 +64,8 @@ int NetlinkManager::start() {
         return -1;
     }
 
-    if (setsockopt(mSock, SOL_SOCKET, SO_RCVBUFFORCE, &sz, sizeof(sz)) < 0) {
-        SLOGE("Unable to set uevent socket SO_RCVBUFFORCE option: %s", strerror(errno));
+    if (setsockopt(mSock, SOL_SOCKET, SO_RCVBUF, &sz, sizeof(sz)) < 0) {
+        SLOGE("Unable to set uevent socket SO_RCVBUF option: %s", strerror(errno));
         goto out;
     }
 
