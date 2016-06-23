@@ -622,7 +622,7 @@ int CommandListener::FstrimCmd::runCommand(SocketClient *cli,
                 | android::vold::TrimTask::Flags::kBenchmarkAfter;
     }
 
-    (new android::vold::TrimTask(flags))->start();
+    // (new android::vold::TrimTask(flags))->start();
     return sendGenericOkFail(cli, 0);
 }
 
