@@ -3787,6 +3787,8 @@ int cryptfs_enable_file()
 int cryptfs_isConvertibleToFBE()
 {
     struct fstab_rec* rec = fs_mgr_get_entry_for_mount_point(fstab, DATA_MNT_POINT);
+    if (!rec)
+      return 0;
     return fs_mgr_is_convertible_to_fbe(rec) ? 1 : 0;
 }
 
